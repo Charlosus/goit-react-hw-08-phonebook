@@ -24,7 +24,7 @@
 //   );
 // };
 
-import { Route, Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout';
 import { lazy } from 'react';
 import RestrictedRoute from './RestrictedRoute';
@@ -38,7 +38,7 @@ const RegisterPage = lazy(() => import('../pages/Register/Register'));
 export function App() {
   return (
     <SharedLayout>
-      <Routs>
+      <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
           path="contacts"
@@ -64,7 +64,7 @@ export function App() {
             />
           }
         />
-      </Routs>
+      </Routes>
     </SharedLayout>
   );
 }
