@@ -1,0 +1,1 @@
+import{j as t}from"./index-BtRVTFzI.js";const e=()=>{const s=useDispatch();return useEffect(()=>{s(fetchContacts())},[s]),t.jsxs("div",{children:[t.jsx(Section,{title:"Phonebook",children:t.jsx(PhonebookInput,{})}),t.jsx(Section,{title:"Contacts",children:t.jsx(ContactList,{})})]})};export{e as Contacts};
