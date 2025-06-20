@@ -43,7 +43,7 @@ export function App() {
         <Route
           path="contacts"
           element={
-            <PrivateRoute redirectPath="/login" Component={<ContactsPage />} />
+            <PrivateRoute redirectPath="/login" element={<ContactsPage />} />
           }
         />
         <Route
@@ -51,7 +51,7 @@ export function App() {
           element={
             <RestrictedRoute
               redirectPath="/contacts"
-              Component={<LoginPage />}
+              element={<LoginPage />}
             />
           }
         />
@@ -60,7 +60,7 @@ export function App() {
           element={
             <RestrictedRoute
               redirectPath="/tasks"
-              Component={<RegisterPage />}
+              element={<RegisterPage />}
             />
           }
         />
