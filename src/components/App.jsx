@@ -35,7 +35,7 @@ const LoginPage = lazy(() => import('../pages/Login/Login'));
 const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
 const RegisterPage = lazy(() => import('../pages/Register/Register'));
 
-function App() {
+export function App() {
   return (
     <SharedLayout>
       <Routs>
@@ -68,5 +68,3 @@ function App() {
     </SharedLayout>
   );
 }
-
-export default App;
