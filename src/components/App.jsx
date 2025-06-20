@@ -28,7 +28,7 @@ import { Route, Router } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout';
 import { lazy } from 'react';
 import RestrictedRoute from './RestrictedRoute';
-import { PrivateRoute } from './PrivetRoute';
+import { PrivateRoute } from './PrivateRoute';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const LoginPage = lazy(() => import('../pages/Login/Login'));
