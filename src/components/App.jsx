@@ -24,25 +24,49 @@
 //   );
 // };
 
-import { Route, Router } from "react-router-dom";
-import { SharedLayout} from './sharedLayout';
-
-import { lazy } from "react";
+import { Route, Router } from 'react-router-dom';
+import { SharedLayout } from './SharedLayout';
+import { lazy } from 'react';
+import RestrictedRoute from './RestrictedRoute';
+import { PrivateRoute } from './PrivetRoute';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const LoginPage = lazy(() => import('../pages/Login/Login'));
 const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
 const RegisterPage = lazy(() => import('../pages/Register/Register'));
 
-function App () {
-
+function App() {
   return (
     <SharedLayout>
       <Routs>
+        <Route path="/" element={<HomePage />} />
         <Route
-        path='/' 
-        element={<HomePage/>}/>
+          path="contacts"
+          element={
+            <PrivateRoute redirectPath="/login" Component={<ContactsPage />} />
+          }
+        />
+        <Route
+          path="login"
+          element={
+            <RestrictedRoute
+              redirectPath="/contacts"
+              Component={<LoginPage />}
+            />
+          }
+        />
+        <Route
+          path="register"
+          element={
+            <RestrictedRoute
+              redirectPath="/tasks"
+              Component={<RegisterPage />}
+            />
+          }
+        />
       </Routs>
     </SharedLayout>
-  )
+  );
 }
+
+export default App;
