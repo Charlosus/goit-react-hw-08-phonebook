@@ -36,3 +36,10 @@ export const logIn = createAsyncThunk(
     }
   }
 );
+export const logOut = createAsyncThunk('/users/logout', async (thunkAPI) => {
+  try {
+    clearAuthHeader();
+  } catch (err) {
+    return thunkAPI.rejectWithValue(err.message);
+  }
+});
