@@ -29,6 +29,7 @@ import { SharedLayout } from './SharedLayout';
 import { lazy } from 'react';
 import RestrictedRoute from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import './App.css';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const LoginPage = lazy(() => import('../pages/Login/Login'));
@@ -37,34 +38,28 @@ const RegisterPage = lazy(() => import('../pages/Register/Register'));
 
 export function App() {
   return (
-    <SharedLayout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<HomePage />} />
         <Route
           path="contacts"
           element={
-            <PrivateRoute redirectPath="/login" element={<ContactsPage />} />
+            <PrivateRoute redirectPath="login" element={<ContactsPage />} />
           }
         />
         <Route
           path="login"
           element={
-            <RestrictedRoute
-              redirectPath="/contacts"
-              element={<LoginPage />}
-            />
+            <RestrictedRoute redirectPath="contacts" element={<LoginPage />} />
           }
         />
         <Route
           path="register"
           element={
-            <RestrictedRoute
-              redirectPath="/tasks"
-              element={<RegisterPage />}
-            />
+            <RestrictedRoute redirectPath="tasks" element={<RegisterPage />} />
           }
         />
-      </Routes>
-    </SharedLayout>
+      </Route>
+    </Routes>
   );
 }

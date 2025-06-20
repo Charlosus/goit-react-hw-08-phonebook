@@ -21,10 +21,12 @@ export default function LoginForm() {
         Email
         <input type="email" name="email" />
       </label>
+      <br />
       <label>
-        Email
+        Password
         <input type="password" name="password" />
       </label>
+      <br />
       <button type="submit">Login</button>
     </form>
   );

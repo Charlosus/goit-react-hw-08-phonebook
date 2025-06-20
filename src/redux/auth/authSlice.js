@@ -10,7 +10,7 @@ import { register, logIn, logOut } from './authOperations';
 //   state.error = action.payload;
 // };
 
-const iniitialState = {
+const initialState = {
   user: { name: null, email: null },
   token: null,
   isLoggedIn: false,
