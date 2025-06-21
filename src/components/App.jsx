@@ -1,35 +1,13 @@
-// import { Section } from './Section';
-// import { PhonebookInput } from './PhonebookInput';
-// import { ContactList } from './ContactList';
-// import { fetchContacts } from '../redux/contactsOperations';
-// import { useDispatch } from 'react-redux';
-// import { useEffect } from 'react';
-
-// export const App = () => {
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     dispatch(fetchContacts());
-//   }, [dispatch]);
-
-//   return (
-//     <div>
-//       <Section title="Phonebook">
-//         <PhonebookInput />
-//       </Section>
-//       <Section title="Contacts">
-//         <ContactList />
-//       </Section>
-//     </div>
-//   );
-// };
-
 import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout';
 import { lazy } from 'react';
 import RestrictedRoute from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshUser } from '../redux/auth/authOperations';
+
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const LoginPage = lazy(() => import('../pages/Login/Login'));
