@@ -42,14 +42,16 @@ Vite
 ```bash
 
 git clone https://github.com/Charlosus/goit-react-hw-08-phonebook.git
-Install dependencies:
 ```
+Install dependencies:
+
 
 ```bash
 
 npm install
-Run the app:
 ```
+Run the app:
+
 
 ```bash
 
