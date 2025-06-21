@@ -1,8 +1,20 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+
   padding: 2rem;
   text-align: center;
+  border: 1px solid #fc5d5d67;
+  border-radius: 16px;
+  width: 50%vw;
+  margin: 2rem auto;
+
+  box-shadow: 0 4px 12px rgba(255, 1, 1, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main {
+  border: 1px solid #fc5d5d67;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
 }
 
 .logo {
@@ -12,7 +24,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em rgba(255, 1, 1, 0.2));
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);

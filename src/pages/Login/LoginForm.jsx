@@ -13,7 +13,6 @@ export default function LoginForm() {
         password: password.value,
       })
     );
-    console.log(`loguje użytkowanika ${email.value} ${password.value}`);
     form.reset();
   };
   return (

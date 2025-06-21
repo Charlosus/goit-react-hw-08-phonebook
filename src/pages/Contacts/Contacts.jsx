@@ -13,7 +13,7 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className='main'>
       <Section title="Phonebook">
         <PhonebookInput />
       </Section>

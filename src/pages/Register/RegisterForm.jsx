@@ -14,11 +14,7 @@ export default function RegisterForm() {
         password: password.value,
       })
     );
-    console.log('Wysyłam dane:', {
-  name: name.value,
-  email: email.value,
-  password: password.value,
-});
+
     form.reset();
   };
   return (

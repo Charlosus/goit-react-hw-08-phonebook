@@ -48,8 +48,8 @@ export const logOut = createAsyncThunk('/users/logout', async (_, thunkAPI) => {
 
 export const refreshUser = createAsyncThunk(
   'auth/refreshUser',
-  async (_, thunkApi) => {
-    const state = thunkApi.getState();
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
 
     if (!persistedToken) {
@@ -59,9 +59,11 @@ export const refreshUser = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const res = await axios.get('/users/current');
+      console.log('Token from persisted state:', persistedToken);
+      console.log('Current user response:', res.data);
       return res.data;
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.message)
+      return thunkAPI.rejectWithValue(err.message);
     }
   }
-)
+);
