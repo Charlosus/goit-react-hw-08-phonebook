@@ -32,11 +32,12 @@ export const logIn = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (err) {
+      console.error('Błąd logowania:', err.response?.data || err.message);
       return thunkAPI.rejectWithValue(err.message);
     }
   }
 );
-export const logOut = createAsyncThunk('/users/logout', async (_,thunkAPI) => {
+export const logOut = createAsyncThunk('/users/logout', async (_, thunkAPI) => {
   try {
     await axios.post('/users/logout');
     clearAuthHeader();

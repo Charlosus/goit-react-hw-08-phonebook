@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { deleteContact } from '../redux/contactsOperations';
+import { deleteContact } from '../../redux/contactsOperations';
 import { ClipLoader } from 'react-spinners';
 
 export const ContactList = () => {

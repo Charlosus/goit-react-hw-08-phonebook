@@ -1,4 +1,11 @@
-export const Contacts = () => {
+import { PhonebookInput } from './PhonebookInput';
+import { Section } from './Section';
+import { ContactList } from './ContactList';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchContacts } from '../../redux/contactsOperations';
+
+const Contacts = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,3 +23,5 @@ export const Contacts = () => {
     </div>
   );
 };
+
+export default Contacts;

@@ -44,19 +44,19 @@ export function App() {
         <Route
           path="contacts"
           element={
-            <PrivateRoute redirectPath="login" element={<ContactsPage />} />
+            <PrivateRoute redirectPath="/login" element={<ContactsPage />} />
           }
         />
         <Route
           path="login"
           element={
-            <RestrictedRoute redirectPath="contacts" element={<LoginPage />} />
+            <RestrictedRoute redirectPath="/contacts" element={<LoginPage />} />
           }
         />
         <Route
           path="register"
           element={
-            <RestrictedRoute redirectPath="tasks" element={<RegisterPage />} />
+            <RestrictedRoute redirectPath="/tasks" element={<RegisterPage />} />
           }
         />
       </Route>

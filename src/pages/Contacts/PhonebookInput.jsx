@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../redux/contactsOperations';
+import { addContact } from '../../redux/contactsOperations';
 
 export const PhonebookInput = () => {
   const initialState = { name: '', number: '' };

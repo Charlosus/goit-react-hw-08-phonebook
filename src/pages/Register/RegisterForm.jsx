@@ -4,7 +4,7 @@ import { register } from '../../redux/auth/authOperations';
 export default function RegisterForm() {
   const dispatch = useDispatch();
   const handleSubmit = e => {
-    e.preventDeault();
+    e.preventDefault();
     const form = e.target;
     const { name, email, password } = form.elements;
     dispatch(
@@ -14,6 +14,11 @@ export default function RegisterForm() {
         password: password.value,
       })
     );
+    console.log('Wysyłam dane:', {
+  name: name.value,
+  email: email.value,
+  password: password.value,
+});
     form.reset();
   };
   return (
@@ -33,7 +38,7 @@ export default function RegisterForm() {
         <input type="password" name="password" />
       </label>
       <br />
-      <button typ="submit">Register</button>
+      <button type="submit">Register</button>
     </form>
   );
 }

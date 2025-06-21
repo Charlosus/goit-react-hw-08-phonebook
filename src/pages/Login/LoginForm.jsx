@@ -10,9 +10,10 @@ export default function LoginForm() {
     dispatch(
       logIn({
         email: email.value,
-        password: password,
+        password: password.value,
       })
     );
+    console.log(`loguje użytkowanika ${email.value} ${password.value}`);
     form.reset();
   };
   return (
