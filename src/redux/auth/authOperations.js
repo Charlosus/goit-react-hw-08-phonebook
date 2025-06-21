@@ -45,3 +45,23 @@ export const logOut = createAsyncThunk('/users/logout', async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(err.message);
   }
 });
+
+export const refreshUser = createAsyncThunk(
+  'auth/refreshUser',
+  async (_, thunkApi) => {
+    const state = thunkApi.getState();
+    const persistedToken = state.auth.token;
+
+    if (!persistedToken) {
+      return thunkAPI.rejectWithValue('No token, pls relogin');
+    }
+
+    try {
+      setAuthHeader(persistedToken);
+      const res = await axios.get('/users/current');
+      return res.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.message)
+    }
+  }
+)
